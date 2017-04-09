@@ -11,7 +11,7 @@ npm install
 npm start
 ```
 
-Then navigate to http://localhost:8000/
+Then navigate to http://localhost:8000/ (or the port in your process.env.PORT variable)
 
 ### Summary
 Stub for a microservice storing user's loyalty points, and attributing them statuses (bronze, silver, gold, platinum)
