@@ -1,0 +1,15 @@
+{
+  "name": "loyalty-program-microservice",
+  "version": "1.0.0",
+  "description": "loyalty program microservice stub",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine-node test",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.2"
+  }
+}

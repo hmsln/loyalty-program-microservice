@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="/lib/angular.min.js"></script>
+		<script src="/src/app.js"></script>
+	</head>
+	<body ng-app="loyalty" ng-controller="main">
+		
+		<div ng-show="!customer._id">
+			<b>Create your account:</b>
+			<div>
+				Name:
+				<br>
+				<input type="text" ng-model="nameToRegister"/>
+			</div>
+
+			<div style="margin-top:10px;">
+				<button ng-click="register()" ng-disabled="!nameToRegister">register</button>
+			</div>
+		</div>
+		
+		<div ng-show="customer._id">
+			<b>Your name:</b>
+			<div style="margin-top:10px;">
+				{{customer.name}}
+			</div>
+		</div>
+		
+		<div style="margin-top:25px;">
+			
+			<b>Spend money:</b>
+			
+			<div>
+				Amount:
+				<br>
+				<input type="text" ng-model="amount"/>
+			</div>
+			
+			<div style="margin-top:10px;">
+				<input type="checkbox" ng-model="riding"/>&nbsp;Is it a ride?
+			</div>
+			
+			<div style="margin-top:10px;">
+				<button ng-click="spend()">validate</button>
+			</div>
+		</div>
+		
+		<div style="margin-top:25px;" ng-if="customer._id">
+			<b>Your loyalty status:</b>
+			<div style="margin-top:10px;">
+				Your status:&nbsp;{{customer.status}}
+				<br>
+				Your number of loyalty points:&nbsp;{{customer.nPoints}}
+				<br>
+				Your number of rides:&nbsp;{{customer.nRides}}
+				<br>
+				<div ng-if="nextStatus.nextStatusName">
+					Next status:&nbsp;{{nextStatus.nextStatusName}}
+					<br>
+					Number of rides to next status:&nbsp;{{nextStatus.nRidesToNextStatus}}
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
